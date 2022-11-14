@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">FaceApiDemo</string>
+    <string name="picture">Picture</string>
+    <string name="description_info">Info</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="register">Face Register</string>
+    <string name="login">Face Login</string>
+    <string name="toggleRecordingOn">Start recording</string>
+    <string name="toggleRecordingOff">Stop recording</string>
+    <string name="more_than_one_face">超过一个人</string>
+    <string name="verification_in_progress">正在验证中</string>
+    <string name="make_sure_in_circle">把脸移入框内</string>
+    <string name="open_mouth">张张嘴</string>
+    <string name="tweak_eyes">眨眨眼</string>
+    <string name="home_greet_txt">欢迎使用</string>
+    <string name="home_greet_sdk_txt">人脸采集SDK</string>
+    <string name="home_light_txt">识别光线适中</string>
+    <string name="home_light_explain_txt">请保证光线不要过暗或过亮</string>
+    <string name="home_handset_txt">请正对手机</string>
+    <string name="home_handset_explain_txt">保持您的脸出现在取景框内</string>
+    <string name="home_mask_txt">避免遮挡</string>
+    <string name="home_mask_explain_txt">请保持您的脸部清晰无遮挡</string>
+    <string name="home_but_txt">开始人脸采集</string>
+    <string name="home_login_txt">人脸登录</string>
+    <string name="home_register_txt">人脸注册</string>
+    <string-array name="cameraFilterNames">
+        <item>Normal</item>
+        <item>Black &amp; white</item>
+        <item>Filter: blur</item>
+        <item>Filter: sharpen</item>
+        <item>Filter: edge detect</item>
+        <item>Filter: emboss</item>
+    </string-array>
+</resources>
