@@ -858,6 +858,7 @@ public class Camera2BasicFragment extends Fragment
             String faceVideoBase64 = Base64.getEncoder().encodeToString(fileContent);
             faceManagementClient.liveness(faceVideoBase64, (success, pictures) -> {
                 if (success) {
+                    outputFile.delete();
                     Intent intent = new Intent();
                     intent.putExtra("action", mAction);
                     switch (mAction) {
@@ -878,6 +879,7 @@ public class Camera2BasicFragment extends Fragment
                             break;
                     }
                 } else {
+
                     openCamera(mTextureView.getWidth(), mTextureView.getHeight());
                 }
             });
