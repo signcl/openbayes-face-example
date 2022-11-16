@@ -1,7 +1,8 @@
 #### 准备工作
-请联系客服来修改为对应的服务器地址
+请联系客服来修改为对应的服务器地址和appId
 ```
  <meta-data android:value="$HOST" android:name="server_host"/>
+  <meta-data android:value="$APP_ID" android:name="app_id"/>
 ```
 
 #### app 使用说明
