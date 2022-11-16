@@ -70,7 +70,7 @@ public class FaceManagementClient {
                 public void onResponse(Response response) throws IOException {
                     try {
                         String body = response.body().string();
-                        Log.e("shit",body);
+
                         JSONObject json = new JSONObject(body);
                         JSONObject result = json.getJSONObject("result");
                         if ("SUCCESS".equals(json.getString("error_msg")) && result.has("face_token") && result.has("location")) {
@@ -97,6 +97,7 @@ public class FaceManagementClient {
             object.put("group_id_list", "normal_user");
             object.put("match_threshold", 90);
             String json = object.toString();
+
             RequestBody requestBody = RequestBody.create(JSON, json);
             Request request = new Request.Builder()
                     .url(v3Host + "/identify?appId=" + appId)
@@ -148,6 +149,7 @@ public class FaceManagementClient {
                     .url(host + "/face/liveness?appId=" + appId)
                     .method("POST", requestBody)
                     .build();
+
             client.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(Request request, IOException e) {
