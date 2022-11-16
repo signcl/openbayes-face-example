@@ -28,7 +28,7 @@ import java.util.List;
 
 public class FaceManagementClient {
 
-    private String APP_ID = "test";
+    private String appId;
     private String host;
     private String v3Host;
 
@@ -40,6 +40,7 @@ public class FaceManagementClient {
             ApplicationInfo ai = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
             host = ai.metaData.get("server_host") + "/face-api/";
             v3Host = host + "/v3/face";
+            appId = ai.metaData.getString("app_id");
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -56,7 +57,7 @@ public class FaceManagementClient {
             String json = object.toString();
             RequestBody requestBody = RequestBody.create(JSON, json);
             Request request = new Request.Builder()
-                    .url(v3Host + "/add?appId=" + APP_ID)
+                    .url(v3Host + "/add?appId=" + appId)
                     .method("POST", requestBody)
                     .build();
             client.newCall(request).enqueue(new Callback() {
@@ -98,7 +99,7 @@ public class FaceManagementClient {
             String json = object.toString();
             RequestBody requestBody = RequestBody.create(JSON, json);
             Request request = new Request.Builder()
-                    .url(v3Host + "/identify?appId=" + APP_ID)
+                    .url(v3Host + "/identify?appId=" + appId)
                     .method("POST", requestBody)
                     .build();
             client.newCall(request).enqueue(new Callback() {
@@ -144,7 +145,7 @@ public class FaceManagementClient {
             String json = object.toString();
             RequestBody requestBody = RequestBody.create(JSON, json);
             Request request = new Request.Builder()
-                    .url(host + "/face/liveness?appId=" + APP_ID)
+                    .url(host + "/face/liveness?appId=" + appId)
                     .method("POST", requestBody)
                     .build();
             client.newCall(request).enqueue(new Callback() {

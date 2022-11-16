@@ -35,7 +35,8 @@
         android:theme="@style/Theme.FaceApiDemo"
         tools:targetApi="31">
         
-        <meta-data android:value="http://13.115.87.2:8300" android:name="server_host"/>
+        <meta-data android:value="$HOST" android:name="server_host"/>
+        <meta-data android:value="$APP_ID" android:name="app_id"/>
         <activity
             android:name=".HomeActivity"
             android:exported="true">
